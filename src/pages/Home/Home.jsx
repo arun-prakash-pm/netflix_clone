@@ -6,6 +6,7 @@ import hero_title from '../../assets/hero_title.png'
 import play_icon from '../../assets/play_icon.png'
 import info_icon from '../../assets/info_icon.png'
 import TitalCards from '../../components/TitalCards/TitalCards'
+import Footer from '../../components/Footer/Footer'
 
 const Home = () => {
   return (
@@ -23,8 +24,16 @@ const Home = () => {
               <button className='btn drak-btn'><img src={info_icon} alt=""/>More Info</button>
             </div>
             <TitalCards/>
+            <div className="more-cards">
+            <TitalCards title={"Blockbuster Movies"}/>
+            <TitalCards title={"Only on Netflix"}/>
+            <TitalCards title={"Upcoming"}/>
+            <TitalCards title={"Blockbuster Movies"}/>
+            </div>
+            <Footer/>
         </div>
       </div> 
+     
     </div>
   )
 }

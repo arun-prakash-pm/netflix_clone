@@ -9,7 +9,8 @@
 .card-list{
     display: flex;
     gap:10px;
-    overflow-x: scroll;
+    overflow-x: auto;
+    scroll-behavior: smooth;
 }
 .card-list::-webkit-scrollbar{
    display: none;
