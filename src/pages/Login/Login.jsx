@@ -1,18 +1,20 @@
-import React from 'react'
 import "./Login.css"
 import logo from '../../assets/logo.png'
+import React, {useState} from 'react'
 
 function Login() {
+  const[signState,setSigState]=useState("Sign In")
+
   return (
     <div className="login">
       <img src={logo} className='login-logo' alt=""/>
       <div className='login-form'>
-        <p>Sign In</p>
+       <p>{signState}</p>
         <form>
-          <input type="text" placeholder='Your name' />
+          {signState==="Sign Up" ? <input type="text" placeholder='Your name' />:<></>}
           <input type="email" placeholder='email' />
           <input type="password" placeholder='Password' />
-          <button>Sign In</button>
+          <button>{signState}</button>
           <div className='form-help'>
             <div className='remember'>
               <input type='checkbox'/>
@@ -21,6 +23,12 @@ function Login() {
             <p>Need Help?</p> 
           </div>
         </form>
+        <div className="font-switch">
+          {signState=="Sign In"?
+          <p>New to Netflix? <span onClick={()=>{setSigState("Sign Up")}}>Sign Up Now</span></p>:
+          <p>Alredy have account? <span onClick={()=>{setSigState("Sign In")}}>Sign In Now</span></p>
+          }
+        </div>
       </div>
      </div>
   )
